@@ -2,9 +2,11 @@ FROM node
 
 WORKDIR /tmp/react
 
-COPY . .
+COPY package* .
 
 RUN npm i
+
+COPY . .
 
 RUN chmod a+x /tmp/react/node_modules/.bin/react-scripts
 

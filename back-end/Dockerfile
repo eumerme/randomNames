@@ -2,11 +2,15 @@ FROM node
 
 WORKDIR /src/usr/
 
+COPY package* .
+
+RUN npm i
+
 COPY . .
 
 EXPOSE 5000
 
-RUN npm i
+RUN npx prisma generate
 
 RUN npm run build
 
